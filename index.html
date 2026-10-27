@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIGCHEFS - Tripoli</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+
+    <!-- Üst Menü (Header) -->
+    <header style="background-color: #d6132d; color: white; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;">
+        <h1 style="margin: 0; color: white; font-size: 26px; font-weight: bold; letter-spacing: 1px;">BIGCHEFS</h1>
+        <nav>
+            <a href="index.html" style="color: white; margin-left: 25px; text-decoration: none; font-size: 17px; font-weight: bold;">الرئيسية</a>
+            <a href="#kategoriler" style="color: white; margin-left: 25px; text-decoration: none; font-size: 17px; font-weight: bold;">الأقسام</a>
+            <a href="#iletisim" style="color: white; text-decoration: none; font-size: 17px; font-weight: bold;">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <!-- Kapak Görseli (Hero Banner) -->
+    <section style="width: 100%; height: 380px; overflow: hidden; position: relative;">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="BigChefs Yemek" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
+            <h2 style="font-size: 40px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">أهلاً بكم في بيج شيفز طرابلس</h2>
+            <p style="font-size: 19px; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">اختر القسم لعرض تفاصيل الوجبات</p>
+        </div>
+    </section>
+
+    <!-- Menü Kategorileri Kartları -->
+    <section id="kategoriler" style="padding: 50px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 30px; margin-bottom: 35px; color: #222;">قائمة الأقسام</h2>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+            
+            <!-- Kategori 1: Burger -->
+            <a href="burger.html" style="text-decoration: none; color: inherit;">
+                <div style="background: white; width: 210px; border-radius: 12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid #d6132d;">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: #d6132d; margin: 12px 0 4px 0; font-size: 17px;">البرجر والستريت فود</h3>
+                    <span style="font-size: 12px; color: #888;">اضغط للاستعراض ←</span>
+                </div>
+            </a>
+
+            <!-- Kategori 2: İçecekler -->
+            <a href="icecekler.html" style="text-decoration: none; color: inherit;">
+                <div style="background: white; width: 210px; border-radius: 12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid #d6132d;">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: #d6132d; margin: 12px 0 4px 0; font-size: 17px;">المشروبات والميلك شيك</h3>
+                    <span style="font-size: 12px; color: #888;">اضغط للاستعراض ←</span>
+                </div>
+            </a>
+
+            <!-- Kategori 3: Tatlılar -->
+            <a href="tatlilar.html" style="text-decoration: none; color: inherit;">
+                <div style="background: white; width: 210px; border-radius: 12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid #d6132d;">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=400&auto=format&fit=crop" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: #d6132d; margin: 12px 0 4px 0; font-size: 17px;">الحلويات</h3>
+                    <span style="font-size: 12px; color: #888;">اضغط للاستعراض ←</span>
+                </div>
+            </a>
+
+            <!-- Kategori 4: Kahvaltı (kahvalti.html Açılır) -->
+            <a href="kahvalti.html" style="text-decoration: none; color: inherit;">
+                <div style="background: white; width: 210px; border-radius: 12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; border: 2px solid #d6132d;">
+                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=400&auto=format&fit=crop" style="width: 100%; height: 130px; object-fit: cover; border-radius: 8px;">
+                    <h3 style="color: #d6132d; margin: 12px 0 4px 0; font-size: 17px;">الإفطار</h3>
+                    <span style="font-size: 12px; color: #888;">اضغط للاستعراض ←</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer id="iletisim" style="background-color: #111; color: #aaa; text-align: center; padding: 30px; margin-top: 50px;">
+        <p style="margin: 0 0 10px 0; font-weight: bold; color: white;">BIGCHEFS TRIPOLI</p>
+        <p style="margin: 0; font-size: 14px; color: #888;">تصميم وتطوير الموقع لخدمة المطاعم في ليبيا</p>
+    </footer>
+
+</body>
+</html>

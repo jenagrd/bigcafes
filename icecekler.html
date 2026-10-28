@@ -4,52 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIGCHEFS - المشروبات والعصائر الطبيعية</title>
+    
+    <!-- Lüks Google Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Genel Sayfa Ayarları */
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #121212; /* Siyah Koyu Arka Plan */
+            color: #e0e0e0;
+        }
+
+        /* Kırmızı Üst Banner (Geri Dön Tuşu ile) */
+        header {
+            background-color: #d6132d;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            color: white;
+            background-color: rgba(0,0,0,0.25);
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(0,0,0,0.45);
+        }
+
+        /* Hero Banner (Üst Fotoğraf Alanı) */
+        .hero-banner {
+            width: 100%;
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(18,18,18,0.95));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-overlay h2 {
+            font-size: 34px;
+            color: #ffbb00;
+            margin: 0 0 10px 0;
+            font-family: 'Cairo', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-overlay p {
+            font-size: 17px;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        /* İçecekler Listesi */
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #1e1e1e;
+            width: 440px;
+            display: flex;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            border: 1px solid #2a2a2a;
+        }
+
+        .card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 18px;
+            color: #ffffff;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+
+        .card-price {
+            color: #ffb300; /* Altın Fiyat Rengi */
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Alt İletişim & Konum Alanı (Footer) */
+        footer {
+            background-color: #0a0a0a;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-call {
+            background-color: #d6132d;
+            color: white;
+        }
+
+        .btn-map {
+            background-color: #2a2a2a;
+            color: #ffbb00;
+            border: 1px solid #ffbb00;
+        }
+
+        .footer-btn:hover {
+            opacity: 0.85;
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+<body>
 
     <!-- BigChefs Kırmızı Üst Menü -->
-    <header style="background-color: #d6132d; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;">
-        <a href="index.html" style="color: white; background-color: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 6px;">
-            <span>➔</span> الرئيسية
-        </a>
-        <h1 style="margin: 0; color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px;">BIGCHEFS</h1>
+    <header>
+        <a href="index.html" class="back-btn">➔ الرئيسية</a>
+        <h1>BIGCHEFS</h1>
     </header>
 
     <!-- Banner -->
-    <section style="width: 100%; height: 260px; position: relative; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px;">
-            <h2 style="font-size: 36px; color: #ffbb00; margin: 0 0 10px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">🍹 المشروبات والعصائر الطبيعية</h2>
-            <p style="font-size: 18px; color: #ffffff; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">منعشات طبيعية، ميلك شيك غني وقهوة مثلجة مميزة</p>
+    <section class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200&auto=format&fit=crop" alt="Beverages Banner" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="hero-overlay">
+            <h2>المشروبات والعصائر الطبيعية</h2>
+            <p>منعشات طبيعية، ميلك شيك غني وقهوة مثلجة مميزة</p>
         </div>
     </section>
 
     <!-- İçecekler Listesi -->
-    <main style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
-        <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+    <main>
+        <div class="menu-grid">
             
-            <div style="background: white; width: 440px; display: flex; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=300&auto=format&fit=crop" style="width: 150px; height: 150px; object-fit: cover;">
-                <div style="padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=300&auto=format&fit=crop" alt="أوريو ايس كريم شيك">
+                <div class="card-content">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <h3 style="margin: 0; font-size: 18px; color: #222;">أوريو ايس كريم شيك</h3>
-                            <span style="color: #d6132d; font-weight: bold; font-size: 18px;">28.00 د.ل</span>
+                        <div class="card-header">
+                            <h3 class="card-title">أوريو ايس كريم شيك</h3>
+                            <span class="card-price">28.00 د.ل</span>
                         </div>
-                        <p style="font-size: 13px; color: #666; margin-top: 10px; line-height: 1.5;">أيس كريم فانيليا، بسكوت أوريو، صوص الشوكولاتة الغني مع كريمة مخفوقة[cite: 12].</p>
+                        <p class="card-desc">أيس كريم فانيليا، بسكوت أوريو، صوص الشوكولاتة الغني مع كريمة مخفوقة.</p>
                     </div>
                 </div>
             </div>
 
-            <div style="background: white; width: 440px; display: flex; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=300&auto=format&fit=crop" style="width: 150px; height: 150px; object-fit: cover;">
-                <div style="padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=300&auto=format&fit=crop" alt="عصير البرتقال الطازج">
+                <div class="card-content">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <h3 style="margin: 0; font-size: 18px; color: #222;">عصير البرتقال الطازج</h3>
-                            <span style="color: #d6132d; font-weight: bold; font-size: 18px;">15.00 د.ل</span>
+                        <div class="card-header">
+                            <h3 class="card-title">عصير البرتقال الطازج</h3>
+                            <span class="card-price">15.00 د.ل</span>
                         </div>
-                        <p style="font-size: 13px; color: #666; margin-top: 10px; line-height: 1.5;">عصير برتقال طبيعي 100% معصور طازجاً عند الطلب[cite: 5].</p>
+                        <p class="card-desc">عصير برتقال طبيعي 100% معصور طازجاً عند الطلب.</p>
                     </div>
                 </div>
             </div>
@@ -57,8 +261,12 @@
         </div>
     </main>
 
-    <footer style="background-color: #111; color: #aaa; text-align: center; padding: 25px; margin-top: 40px;">
-        <p style="margin: 0;">Big Chefs Tripoli - قائمة المشروبات والميلك شيك</p>
+    <footer style="background-color: #0a0a0a; color: #aaaaaa; text-align: center; padding: 35px 20px; margin-top: 50px; border-top: 1px solid #222;">
+        <div class="footer-buttons">
+            <a href="tel:+218900000000" class="footer-btn btn-call">اتصل بنا </a>
+            <a href="https://maps.google.com" target="_blank" class="footer-btn btn-map">الموقع </a>
+        </div>
+        <p style="margin: 0; font-size: 13px;">Big Chefs Tripoli - قائمة المشروبات والميلك شيك</p>
     </footer>
 
 </body>
